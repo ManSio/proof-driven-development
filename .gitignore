@@ -1,0 +1,22 @@
+# secrets and local state
+.env
+.env.*
+*.pem
+*.key
+*.p12
+secrets/
+state/
+backup-*/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# os / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
