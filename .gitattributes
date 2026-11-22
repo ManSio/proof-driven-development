@@ -1,0 +1,5 @@
+# Keep the public tree byte-identical across platforms: LF in the repo,
+# LF on checkout. Windows editors may still show CRLF locally; git normalizes.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
