@@ -32,12 +32,12 @@ Read when: <one condition>.
 Checklist before a PR:
 
 ```bash
-python scripts/doctor.py --root .
-python scripts/skill_inventory.py --root .
+python scripts/sync_public.py --check
 ```
 
-Both must exit 0 (warnings are fine). Include in the PR: what you changed, the
-commands you ran, and what you did **not** verify.
+The gate verifies the changed-path whitelist, scans for private data, and runs
+both protocol gates. It must exit 0 (warnings are fine). Include in the PR: what
+you changed, the commands you ran, and what you did **not** verify.
 
 ## What we won't merge
 

@@ -22,4 +22,7 @@ Initial distilled release.
 - `eval-lab`: provenance — a score must prove it ran; replay is opt-in; mixed
   revisions are refused.
 - `SYNC.md`: local → public projection model.
+- `scripts/sync_public.py`: publish gate (whitelist + scrub + both protocol gates).
+- GitHub Actions: `doctor` and `skill_inventory` (with selftests) on Python 3.10
+  and 3.12 for every push and pull request.
 

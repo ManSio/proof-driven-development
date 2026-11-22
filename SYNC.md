@@ -12,16 +12,15 @@ then port only the generic part here.
 
 1. Copy the generic change into the matching file here. Never copy private paths,
    hostnames, keys, diaries, or registry content.
-2. Run both gates; they must exit 0:
+2. Run the publish gate (checks whitelist, scrub, and both protocol gates):
    ```bash
-   python scripts/doctor.py --root .
-   python scripts/skill_inventory.py --root .
+   python scripts/sync_public.py --check
    ```
-3. Scan for private data — the result must be empty:
+3. Fix anything it reports. Then commit with Conventional Commits (or let the gate do it):
    ```bash
-   grep -RInE 'C:\\Users|D:\\Project|192\.168\.' .
+   python scripts/sync_public.py --commit -m "docs: update red team"
    ```
-4. Commit with Conventional Commits. Push only on an explicit owner command.
+4. Push only on an explicit owner command. The gate never pushes.
 
 ## Pulling a change (rare)
 
